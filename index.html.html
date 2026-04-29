@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Afrieta AutoGarage — Jual Beli Mobil Sidoarjo</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f4f0;--w:#fff;--blk:#111;--g1:#eeecea;--g2:#dddbd6;--g4:#9a9890;--g6:#5c5a54;--red:#c0392b;--rl:#fdf0ef;--grn:#27ae60;--gl:#edfbf3;--gold:#a07830;--r:12px;--sh:0 2px 16px rgba(0,0,0,.07)}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--blk);min-height:100vh}
+h1,h2,h3{font-family:'Outfit',sans-serif}
+.nav{background:var(--blk);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
+.nb{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#fff}.nb span{color:#f0c060}
+.nr{display:flex;gap:8px}
+.btn{padding:7px 16px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+.bg{background:0;color:#aaa;border:1px solid #333}.bg:hover{color:#fff;border-color:#666}
+.bgo{background:var(--gold);color:#fff}.bgo:hover{background:#8a6828}
+.br{background:var(--red);color:#fff}.br:hover{background:#a93226}
+.bgn{background:var(--grn);color:#fff}.bgn:hover{background:#1e9e50}
+.bsm{padding:5px 11px;font-size:12px}
+.page{display:none}.page.active{display:block}
+.hero{background:var(--blk);padding:44px 28px 36px;text-align:center}
+.hero h1{font-size:34px;font-weight:800;color:#fff;margin-bottom:7px}.hero h1 span{color:#f0c060}
+.hero p{color:#888;font-size:13px}
+.sf{padding:16px 24px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:var(--w);border-bottom:1px solid var(--g2)}
+.si{flex:1;min-width:180px;padding:8px 15px;border-radius:20px;border:1.5px solid var(--g2);font-size:13px;font-family:inherit;outline:none;background:#fff}
+.si:focus{border-color:var(--blk)}
+.fb{padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;border:1.5px solid var(--g2);background:#fff;font-family:inherit;transition:all .15s;font-weight:500;color:var(--g6)}
+.fb.active,.fb:hover{background:var(--blk);color:#fff;border-color:var(--blk)}
+.stb{background:var(--w);padding:12px 24px;display:flex;gap:20px;border-bottom:1px solid var(--g2);flex-wrap:wrap}
+.si2{font-size:13px;color:var(--g6)}.si2 strong{color:var(--blk);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;padding:24px}
+.cc{background:var(--w);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;cursor:pointer;position:relative}
+.cc:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.cc.sold{opacity:.72}
+.so{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:16px;letter-spacing:1px;text-transform:uppercase;z-index:2}
+.av{position:absolute;top:12px;right:12px;background:var(--grn);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:16px;z-index:2}
+.ci{width:100%;height:190px;object-fit:cover;display:block;background:var(--g1)}
+.cp{width:100%;height:190px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:38px;color:var(--g4)}
+.cb{padding:15px}
+.ct{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;margin-bottom:3px}
+.cs{font-size:12px;color:var(--g4);margin-bottom:9px}
+.ctags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.tg{font-size:11px;padding:2px 8px;border-radius:9px;background:var(--g1);color:var(--g6);font-weight:500}
+.cpr{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--red);margin-bottom:9px}
+.cwa{width:100%;padding:9px;background:var(--grn);color:#fff;border:none;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;transition:background .15s}
+.cwa:hover{background:#1e9e50}
+.es{padding:60px 24px;text-align:center;color:var(--g4)}
+.aw{max-width:1080px;margin:0 auto;padding:28px 20px}
+.ah{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px}
+.ah h2{font-size:22px;font-weight:700}
+.at{background:var(--w);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.ath{display:grid;grid-template-columns:1fr 90px 90px 120px;gap:10px;padding:11px 18px;background:var(--g1);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--g4);font-weight:600}
+.ar{display:grid;grid-template-columns:1fr 90px 90px 120px;gap:10px;padding:13px 18px;border-top:1px solid var(--g1);align-items:center}
+.ar:hover{background:var(--bg)}
+.art{font-weight:500;font-size:14px}.ars{font-size:11px;color:var(--g4);margin-top:2px}
+.sb{font-size:11px;padding:3px 9px;border-radius:9px;font-weight:600;width:fit-content}
+.sav{background:var(--gl);color:var(--grn)}.sso{background:var(--rl);color:var(--red)}
+.aa{display:flex;gap:5px}
+.mb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center;padding:16px}
+.mb.open{display:flex}
+.mx{background:#fff;border-radius:15px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto}
+.mh{padding:18px 22px;border-bottom:1px solid var(--g2);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2}
+.mh h3{font-size:17px;font-weight:700}
+.mcb{background:none;border:none;font-size:22px;cursor:pointer;color:var(--g4);line-height:1}
+.mb2{padding:22px}
+.fg{margin-bottom:16px}
+.fl{font-size:11px;font-weight:600;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;display:block}
+.fi,.fs,.ft{width:100%;padding:9px 13px;border:1.5px solid var(--g2);border-radius:8px;font-size:13px;font-family:inherit;outline:none;transition:border-color .15s;background:#fff;color:var(--blk)}
+.fi:focus,.fs:focus,.ft:focus{border-color:var(--blk)}
+.ft{resize:vertical;min-height:72px}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.it{display:flex;gap:7px;margin-bottom:10px}
+.itb{padding:6px 14px;border-radius:7px;font-size:12px;cursor:pointer;border:1.5px solid var(--g2);background:#fff;font-family:inherit;transition:all .15s;font-weight:500}
+.itb.active{background:var(--blk);color:#fff;border-color:var(--blk)}
+.ip{width:100%;height:130px;object-fit:cover;border-radius:7px;display:none;margin-top:7px}
+.ip.show{display:block}
+.mf{padding:14px 22px;border-top:1px solid var(--g2);display:flex;justify-content:flex-end;gap:9px;position:sticky;bottom:0;background:#fff}
+.dmb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:400;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
+.dmb.open{display:flex}
+.dbx{background:#fff;border-radius:15px;width:100%;max-width:660px;margin:auto;overflow:hidden}
+.dimg{width:100%;height:260px;object-fit:cover}
+.diph{width:100%;height:180px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:52px;color:#ccc}
+.db{padding:22px}
+.dt{font-size:22px;font-weight:800;margin-bottom:3px}
+.dsu{color:var(--g4);font-size:12px;margin-bottom:14px}
+.dp{font-size:24px;font-weight:800;color:var(--red);margin-bottom:14px}
+.dsp{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:14px}
+.dsc{background:var(--bg);border-radius:7px;padding:9px 13px}
+.dsl{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--g4);font-weight:600;margin-bottom:2px}
+.dsv{font-size:13px;font-weight:600}
+.dn{background:var(--bg);border-radius:7px;padding:12px;font-size:13px;color:var(--g6);line-height:1.6;margin-bottom:14px}
+.dwa{width:100%;padding:12px;background:var(--grn);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit}
+.dwa:hover{background:#1e9e50}
+.dcb{width:100%;padding:10px;background:var(--bg);color:var(--g6);border:none;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;margin-top:7px}
+.lw{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--blk)}
+.lb{background:#fff;border-radius:15px;padding:36px;width:100%;max-width:340px;text-align:center}
+.lb h2{font-size:20px;font-weight:700;margin-bottom:5px}
+.lb p{font-size:13px;color:var(--g4);margin-bottom:24px}
+.le{color:var(--red);font-size:13px;margin-top:9px;display:none}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--blk);color:#fff;padding:11px 22px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nb">🚗 <span>Afrieta</span> AutoGarage</div>
+  <div class="nr">
+    <button class="btn bg" onclick="showPage('public')">🏪 Etalase</button>
+    <button class="btn bg" onclick="goAdmin()">⚙️ Admin</button>
+  </div>
+</nav>
+
+<div class="page active" id="page-public">
+  <div class="hero">
+    <h1>🚗 <span>Afrieta</span> AutoGarage</h1>
+    <p>Mobil berkualitas pilihan · Sidoarjo & Surabaya · Hub: 0878-2802-1989</p>
+  </div>
+  <div class="stb" id="stb"></div>
+  <div class="sf">
+    <input class="si" id="si" placeholder="🔍 Cari merek, tipe, tahun..." oninput="rPub()">
+    <button class="fb active" onclick="setF('all',this)">Semua</button>
+    <button class="fb" onclick="setF('available',this)">Tersedia</button>
+    <button class="fb" onclick="setF('sold',this)">Sold</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="page" id="page-admin">
+  <div class="aw">
+    <div class="ah">
+      <h2>⚙️ Panel Admin — Afrieta AutoGarage</h2>
+      <div style="display:flex;gap:8px">
+        <button class="btn bg" onclick="showPage('public')">← Etalase</button>
+        <button class="btn bgo" onclick="openForm()">+ Tambah Mobil</button>
+      </div>
+    </div>
+    <div class="at">
+      <div class="ath"><div>Kendaraan</div><div>Harga</div><div>Status</div><div>Aksi</div></div>
+      <div id="al"></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-login">
+  <div class="lw">
+    <div class="lb">
+      <div style="font-size:34px;margin-bottom:10px">🔐</div>
+      <h2>Admin Login</h2>
+      <p>Masukkan PIN untuk akses<br><strong>Afrieta AutoGarage</strong></p>
+      <input class="fi" type="password" id="pi" placeholder="PIN Admin" style="text-align:center;font-size:20px;letter-spacing:4px" maxlength="8" onkeydown="if(event.key==='Enter')chkPin()">
+      <div class="le" id="le">PIN salah, coba lagi.</div>
+      <button class="btn bgo" style="width:100%;margin-top:12px;padding:11px" onclick="chkPin()">Masuk</button>
+      <button class="btn bg" style="width:100%;margin-top:7px;padding:9px" onclick="showPage('public')">Kembali</button>
+    </div>
+  </div>
+</div>
+
+<!-- FORM MODAL -->
+<div class="mb" id="fm">
+  <div class="mx">
+    <div class="mh"><h3 id="ft2">Tambah Mobil</h3><button class="mcb" onclick="closeForm()">×</button></div>
+    <div class="mb2">
+      <div class="fr2">
+        <div class="fg"><label class="fl">Merek *</label><input class="fi" id="fb" placeholder="Mitsubishi, Toyota..."></div>
+        <div class="fg"><label class="fl">Model / Tipe *</label><input class="fi" id="fm2" placeholder="Xpander Sport..."></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label class="fl">Tahun *</label><input class="fi" id="fy" placeholder="2022" type="number"></div>
+        <div class="fg"><label class="fl">Transmisi</label>
+          <select class="fs" id="ftr"><option value="AT">Automatic (AT)</option><option value="CVT">CVT</option><option value="MT">Manual (MT)</option></select>
+        </div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label class="fl">Mesin</label><input class="fi" id="fe" placeholder="1500cc"></div>
+        <div class="fg"><label class="fl">Kilometer</label><input class="fi" id="fk" placeholder="70.000"></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label class="fl">Warna</label><input class="fi" id="fc" placeholder="Hitam, Putih..."></div>
+        <div class="fg"><label class="fl">Plat</label><input class="fi" id="fpl" placeholder="L, W, N..."></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label class="fl">Pajak s/d</label><input class="fi" id="ftx" placeholder="Feb 2027"></div>
+        <div class="fg"><label class="fl">Harga</label><input class="fi" id="fpr" placeholder="Nego / Rp 185jt"></div>
+      </div>
+      <div class="fg"><label class="fl">Nomor WA Penjual</label><input class="fi" id="fw" placeholder="6287828021989"></div>
+      <div class="fg">
+        <label class="fl">Foto Utama</label>
+        <div class="it">
+          <button class="itb active" onclick="swImg('url',this)">🔗 Link URL</button>
+          <button class="itb" onclick="swImg('upload',this)">📁 Upload</button>
+        </div>
+        <div id="iuw"><input class="fi" id="fiu" placeholder="https://... atau link foto" oninput="prevImg()"></div>
+        <div id="iupw" style="display:none">
+          <input type="file" id="fif" accept="image/*" onchange="hdlUpload(this)" style="display:none">
+          <button class="btn bg" onclick="document.getElementById('fif').click()" style="width:100%">📁 Pilih Foto</button>
+        </div>
+        <img class="ip" id="ipv" src="" alt="Preview">
+      </div>
+      <div class="fg"><label class="fl">Catatan / Fitur</label><textarea class="ft" id="fnt" placeholder="Tangan pertama, service record, EPB..."></textarea></div>
+    </div>
+    <div class="mf">
+      <button class="btn bg" onclick="closeForm()">Batal</button>
+      <button class="btn bgo" onclick="saveCar()">💾 Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="dmb" id="dm" onclick="clsD(event)">
+  <div class="dbx" onclick="event.stopPropagation()">
+    <div id="dc"></div>
+    <div style="padding:0 22px 22px"><button class="dcb" onclick="clsDM()">Tutup</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Data disimpan di localStorage browser
+const SK='afrieta_cars_v1', PIN='1234';
+let cars=[],eId=null,iMode='url',cf='all',isAdm=false;
+
+function load(){
+  const raw=localStorage.getItem(SK);
+  cars=raw?JSON.parse(raw):sample();
+  ra();
+}
+function save(){
+  localStorage.setItem(SK,JSON.stringify(cars));
+}
+function sample(){
+  return[
+    {id:'c1',brand:'Mitsubishi',model:'Xpander Sport',year:2022,trans:'CVT',engine:'1500cc',km:'71.699',color:'Hitam',plate:'L',tax:'Feb 2027',price:'Nego',wa:'6287828021989',notes:'Major Change Facelift · Tangan pertama · EPB · Hill Start Assist · HU 8" · Surat lengkap',img:'',sold:false},
+    {id:'c2',brand:'Mitsubishi',model:'Xpander Ultimate',year:2021,trans:'AT',engine:'1500cc',km:'44.901',color:'Abu-abu',plate:'L',tax:'Sep 2026',price:'Nego',wa:'6287828021989',notes:'Minor Change · KM rendah · Cruise Control · Keyless · Start Stop · Surat lengkap',img:'',sold:false}
+  ];
+}
+const WI='<svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52ZM12 22c-1.85 0-3.67-.5-5.24-1.44l-.38-.22-3.89.99 1.02-3.77-.25-.39A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.66 0 5.16 1.04 7.04 2.92A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10Zm5.47-7.46c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.94 1.16-.35.22-.65.07a8.15 8.15 0 0 1-2.4-1.48 9.02 9.02 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52s.2-.3.3-.5.05-.37-.02-.52-.67-1.6-.91-2.19c-.24-.58-.48-.5-.67-.51H7.7c-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.47s1.05 2.87 1.2 3.07c.14.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.67.62.7.22 1.34.19 1.84.11.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34Z"/></svg>';
+
+function rPub(){
+  const q=document.getElementById('si').value.toLowerCase();
+  const list=cars.filter(c=>{
+    const mf=cf==='all'||(cf==='available'&&!c.sold)||(cf==='sold'&&c.sold);
+    const ms=!q||`${c.brand} ${c.model} ${c.year} ${c.color}`.toLowerCase().includes(q);
+    return mf&&ms;
+  });
+  const tot=cars.length,av=cars.filter(c=>!c.sold).length,so=cars.filter(c=>c.sold).length;
+  document.getElementById('stb').innerHTML=`<div class="si2">Total: <strong>${tot}</strong></div><div class="si2" style="color:var(--grn)">Tersedia: <strong>${av}</strong></div><div class="si2" style="color:var(--red)">Sold: <strong>${so}</strong></div>`;
+  const g=document.getElementById('grid');
+  if(!list.length){g.innerHTML='<div class="es" style="grid-column:1/-1"><div style="font-size:44px;margin-bottom:12px">🚗</div><p>Tidak ada kendaraan ditemukan</p></div>';return;}
+  g.innerHTML=list.map(c=>`<div class="cc${c.sold?' sold':''}" onclick="showDet('${c.id}')">
+    ${c.sold?'<div class="so">SOLD</div>':'<div class="av">Tersedia</div>'}
+    ${c.img?`<img class="ci" src="${c.img}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cp" style="display:none">🚗</div>`:'<div class="cp">🚗</div>'}
+    <div class="cb">
+      <div class="ct">${c.brand} ${c.model}</div>
+      <div class="cs">${c.year} · ${c.engine} · ${c.trans} · Plat ${c.plate}</div>
+      <div class="ctags"><span class="tg">KM ${c.km}</span><span class="tg">Pajak ${c.tax}</span>${c.color?`<span class="tg">${c.color}</span>`:''}</div>
+      <div class="cpr">${c.price}</div>
+      ${!c.sold?`<button class="cwa" onclick="event.stopPropagation();wac('${c.id}')">${WI}Tanya via WhatsApp</button>`:'<div style="text-align:center;padding:7px;font-size:13px;color:var(--red);font-weight:600">Sudah Terjual</div>'}
+    </div></div>`).join('');
+}
+
+function showDet(id){
+  const c=cars.find(x=>x.id===id);if(!c)return;
+  document.getElementById('dc').innerHTML=`
+    ${c.img?`<img class="dimg" src="${c.img}" onerror="this.style.display='none'">`:'<div class="diph">🚗</div>'}
+    <div class="db">
+      ${c.sold?'<div style="display:inline-block;background:var(--rl);color:var(--red);font-size:10px;font-weight:700;padding:3px 10px;border-radius:9px;margin-bottom:9px;text-transform:uppercase;letter-spacing:1px">SOLD</div>':''}
+      <div class="dt">${c.brand} ${c.model}</div>
+      <div class="dsu">${c.year} · ${c.engine} · ${c.trans} · Plat ${c.plate} · ${c.color}</div>
+      <div class="dp">${c.price}</div>
+      <div class="dsp">
+        <div class="dsc"><div class="dsl">Kilometer</div><div class="dsv">${c.km}</div></div>
+        <div class="dsc"><div class="dsl">Pajak s/d</div><div class="dsv">${c.tax}</div></div>
+        <div class="dsc"><div class="dsl">Transmisi</div><div class="dsv">${c.trans}</div></div>
+        <div class="dsc"><div class="dsl">Mesin</div><div class="dsv">${c.engine}</div></div>
+      </div>
+      ${c.notes?`<div class="dn">📝 ${c.notes}</div>`:''}
+      ${!c.sold?`<button class="dwa" onclick="wac('${c.id}')">${WI}Chat WhatsApp — ${fwa(c.wa)}</button>`:''}
+    </div>`;
+  document.getElementById('dm').classList.add('open');
+}
+function clsD(e){if(e.target===document.getElementById('dm'))clsDM();}
+function clsDM(){document.getElementById('dm').classList.remove('open');}
+
+function rAdm(){
+  const al=document.getElementById('al');
+  if(!cars.length){al.innerHTML='<div style="padding:28px;text-align:center;color:var(--g4)">Belum ada data. Klik "+ Tambah Mobil"</div>';return;}
+  al.innerHTML=cars.map(c=>`<div class="ar">
+    <div><div class="art">${c.brand} ${c.model} ${c.year}</div><div class="ars">KM ${c.km} · Plat ${c.plate} · ${c.trans}</div></div>
+    <div style="font-weight:600;font-size:14px">${c.price}</div>
+    <div><span class="sb ${c.sold?'sso':'sav'}">${c.sold?'SOLD':'Tersedia'}</span></div>
+    <div class="aa">
+      <button class="btn bsm bg" onclick="editCar('${c.id}')">✏️</button>
+      <button class="btn bsm ${c.sold?'bgn':'br'}" onclick="togSold('${c.id}')">${c.sold?'↩️':'✅'}</button>
+      <button class="btn bsm br" onclick="delCar('${c.id}')">🗑️</button>
+    </div></div>`).join('');
+}
+function ra(){rPub();rAdm();}
+
+function openForm(id=null){
+  eId=id;
+  document.getElementById('ft2').textContent=id?'Edit Kendaraan':'Tambah Kendaraan Baru';
+  if(id){
+    const c=cars.find(x=>x.id===id);
+    document.getElementById('fb').value=c.brand||'';document.getElementById('fm2').value=c.model||'';
+    document.getElementById('fy').value=c.year||'';document.getElementById('ftr').value=c.trans||'AT';
+    document.getElementById('fe').value=c.engine||'';document.getElementById('fk').value=c.km||'';
+    document.getElementById('fc').value=c.color||'';document.getElementById('fpl').value=c.plate||'';
+    document.getElementById('ftx').value=c.tax||'';document.getElementById('fpr').value=c.price||'';
+    document.getElementById('fw').value=c.wa||'';document.getElementById('fiu').value=c.img||'';
+    document.getElementById('fnt').value=c.notes||'';
+    if(c.img){const p=document.getElementById('ipv');p.src=c.img;p.classList.add('show');}
+  } else {
+    ['fb','fm2','fy','fe','fk','fc','fpl','ftx','fpr','fnt'].forEach(i=>document.getElementById(i).value='');
+    document.getElementById('ftr').value='AT';document.getElementById('fw').value='6287828021989';
+    document.getElementById('fiu').value='';document.getElementById('ipv').classList.remove('show');
+  }
+  document.getElementById('fm').classList.add('open');
+}
+function closeForm(){document.getElementById('fm').classList.remove('open');eId=null;}
+function saveCar(){
+  const brand=document.getElementById('fb').value.trim();
+  const model=document.getElementById('fm2').value.trim();
+  const year=document.getElementById('fy').value.trim();
+  if(!brand||!model||!year){toast('Merek, Model, Tahun wajib diisi!');return;}
+  const d={brand,model,year:parseInt(year),trans:document.getElementById('ftr').value,engine:document.getElementById('fe').value.trim(),km:document.getElementById('fk').value.trim(),color:document.getElementById('fc').value.trim(),plate:document.getElementById('fpl').value.trim(),tax:document.getElementById('ftx').value.trim(),price:document.getElementById('fpr').value.trim()||'Nego',wa:document.getElementById('fw').value.trim()||'6287828021989',img:document.getElementById('fiu').value.trim(),notes:document.getElementById('fnt').value.trim()};
+  if(eId){const i=cars.findIndex(c=>c.id===eId);cars[i]={...cars[i],...d};toast('✅ Data diupdate!');}
+  else{d.id='c'+Date.now();d.sold=false;cars.unshift(d);toast('✅ Kendaraan ditambahkan!');}
+  save();ra();closeForm();
+}
+function editCar(id){openForm(id);}
+function togSold(id){const c=cars.find(x=>x.id===id);c.sold=!c.sold;save();ra();toast(c.sold?'🔴 Ditandai SOLD':'🟢 Ditandai Tersedia');}
+function delCar(id){if(!confirm('Yakin hapus kendaraan ini?'))return;cars=cars.filter(c=>c.id!==id);save();ra();toast('🗑️ Dihapus');}
+function swImg(m,el){iMode=m;document.querySelectorAll('.itb').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('iuw').style.display=m==='url'?'':'none';document.getElementById('iupw').style.display=m==='upload'?'':'none';}
+function prevImg(){const u=document.getElementById('fiu').value.trim();const p=document.getElementById('ipv');if(u){p.src=u;p.classList.add('show');}else{p.classList.remove('show');}}
+function hdlUpload(input){const f=input.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{const b=e.target.result;document.getElementById('fiu').value=b;const p=document.getElementById('ipv');p.src=b;p.classList.add('show');};r.readAsDataURL(f);}
+function setF(f,el){cf=f;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));el.classList.add('active');rPub();}
+function showPage(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');}
+function goAdmin(){if(isAdm){showPage('admin');return;}showPage('login');setTimeout(()=>document.getElementById('pi').focus(),100);}
+function chkPin(){const p=document.getElementById('pi').value;if(p===PIN){isAdm=true;document.getElementById('pi').value='';document.getElementById('le').style.display='none';showPage('admin');toast('✅ Login berhasil!');}else{document.getElementById('le').style.display='block';document.getElementById('pi').value='';}}
+function wac(id){const c=cars.find(x=>x.id===id);if(!c)return;const m=encodeURIComponent(`Halo, saya tertarik dengan ${c.brand} ${c.model} ${c.year}. Apakah masih tersedia?`);window.open(`https://wa.me/${c.wa.replace(/\D/g,'')}?text=${m}`,'_blank');}
+function fwa(w){if(!w)return'';const n=w.replace(/\D/g,'');return n.startsWith('62')?'0'+n.slice(2):n;}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+load();
+</script>
+</body>
+</html>
